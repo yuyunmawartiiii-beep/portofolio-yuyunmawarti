@@ -1,0 +1,275 @@
+/* Pengaturan dasar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #4E342E;
+    color: #FFFFFF;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Navigasi */
+header {
+    background-color: #2B1B18;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.navbar {
+    max-width: 1100px;
+    margin: auto;
+    padding: 18px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 26px;
+    font-weight: bold;
+}
+
+.logo span {
+    color: #E0C3A1;
+}
+
+.nav-links {
+    display: flex;
+    gap: 25px;
+    list-style: none;
+}
+
+.nav-links a {
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #E0C3A1;
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+/* Beranda */
+.hero {
+    min-height: 85vh;
+    max-width: 1100px;
+    margin: auto;
+    padding: 70px 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.hero-content {
+    max-width: 650px;
+}
+
+.greeting {
+    color: #E0C3A1;
+    margin-bottom: 12px;
+}
+
+.hero h1 {
+    font-size: clamp(32px, 5vw, 48px);
+    line-height: 1.2;
+    margin-bottom: 15px;
+}
+
+.hero h1 span {
+    color: #E0C3A1;
+}
+
+.hero h2 {
+    margin-bottom: 15px;
+    font-size: 23px;
+}
+
+.hero-content>p:not(.greeting) {
+    margin-bottom: 25px;
+    color: #F1E9E4;
+}
+
+/* Inisial profil */
+.avatar {
+    width: 220px;
+    height: 220px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background-color: #E0C3A1;
+    color: #2B1B18;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 65px;
+    font-weight: bold;
+    border: 7px solid #8D6E63;
+}
+
+/* Tombol */
+.btn {
+    display: inline-block;
+    background-color: #E0C3A1;
+    color: #2B1B18;
+    padding: 12px 22px;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background-color: #FFFFFF;
+    transform: translateY(-2px);
+}
+
+/* Bagian umum */
+.section {
+    padding: 70px 25px;
+    text-align: center;
+}
+
+.section-dark {
+    background-color: #5D4037;
+}
+
+.section-title {
+    font-size: 32px;
+    margin-bottom: 35px;
+    color: #E0C3A1;
+}
+
+.about-content {
+    max-width: 750px;
+    margin: auto;
+    font-size: 17px;
+}
+
+/* Kartu keahlian dan proyek */
+.card-container {
+    max-width: 1100px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.card {
+    background-color: #3E2723;
+    padding: 28px 22px;
+    border-radius: 12px;
+    border: 1px solid #795548;
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+}
+
+.card-icon {
+    font-size: 38px;
+    margin-bottom: 12px;
+}
+
+.card h3 {
+    color: #E0C3A1;
+    margin-bottom: 10px;
+}
+
+.card p {
+    color: #F1E9E4;
+}
+
+.tag {
+    display: inline-block;
+    margin-top: 18px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: #5D4037;
+    color: #E0C3A1;
+    font-size: 13px;
+}
+
+/* Kontak */
+.contact-text {
+    margin-bottom: 22px;
+}
+
+.email-note {
+    margin-top: 15px;
+    font-size: 13px;
+    color: #E0C3A1;
+}
+
+/* Footer */
+footer {
+    background-color: #2B1B18;
+    text-align: center;
+    padding: 22px;
+    color: #F1E9E4;
+}
+
+/* Tampilan HP dan tablet */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 65px;
+        left: 0;
+        width: 100%;
+        background-color: #2B1B18;
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+        padding: 10px 0;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        padding: 12px;
+    }
+
+    .hero {
+        flex-direction: column-reverse;
+        text-align: center;
+        padding-top: 50px;
+    }
+
+    .avatar {
+        width: 160px;
+        height: 160px;
+        font-size: 48px;
+    }
+
+    .card-container {
+        grid-template-columns: 1fr;
+    }
+
+    .section-title {
+        font-size: 27px;
+    }
+}
